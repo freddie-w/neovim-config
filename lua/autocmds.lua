@@ -10,17 +10,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
---- Create a darker background for inactive windows.
-vim.api.nvim_set_hl(0, 'InactiveWindow', { bg = '#13131c' })
-
--- Active window: normal highlight
+-- Active window: normal background
 vim.api.nvim_create_autocmd({ 'WinEnter', 'BufEnter' }, {
   callback = function()
     vim.wo.winhighlight = 'Normal:Normal,NormalNC:Normal'
   end,
 })
 
--- Inactive window: use dim background
+-- Create a darker background for inactive windows.
+vim.api.nvim_set_hl(0, 'InactiveWindow', { bg = '#13131c' })
+
+-- Inactive window: use darker background
 vim.api.nvim_create_autocmd({ 'WinLeave', 'BufLeave' }, {
   callback = function()
     vim.wo.winhighlight = 'Normal:InactiveWindow,NormalNC:InactiveWindow'
