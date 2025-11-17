@@ -5,6 +5,9 @@ vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { desc = 'Press escape to exit term
 vim.keymap.set('n', '<leader>nt', function()
   vim.cmd 'terminal'
 end, { desc = 'New terminal in current window' })
+vim.keymap.set('n', '<leader>sib', function()
+  vim.cmd 'Telescope current_buffer_fuzzy_find'
+end, { desc = 'Search in current buffer' })
 
 -- Navigation
 vim.keymap.set('n', '<leader>o', '<C-o>', { desc = 'Jump back' })
