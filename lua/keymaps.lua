@@ -2,6 +2,9 @@
 vim.keymap.set('i', 'jj', '<Esc>', { desc = 'Remap jj to escape' })
 vim.keymap.set('n', '<leader>e', '<Cmd>Neotree toggle<CR>', { desc = 'Show the file tree' })
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { desc = 'Press escape to exit terminal mode' })
+vim.keymap.set('n', '<leader>nt', function()
+  vim.cmd 'terminal'
+end, { desc = 'New terminal in current window' })
 
 -- Navigation
 vim.keymap.set('n', '<leader>o', '<C-o>', { desc = 'Jump back' })
@@ -42,8 +45,6 @@ vim.keymap.set('n', '<leader>mwj', '<C-w>J', { desc = 'Move window down' })
 vim.keymap.set('n', '<leader>mwk', '<C-w>K', { desc = 'Move window up' })
 vim.keymap.set('n', '<leader>mwl', '<C-w>L', { desc = 'Move window right' })
 
--- Resize windows
-vim.keymap.set('n', '<leader>wh', '<C-w><', { desc = 'Shrink window horizontally' })
-vim.keymap.set('n', '<leader>wl', '<C-w>>', { desc = 'Grow window horizontally' })
-vim.keymap.set('n', '<leader>wk', '<C-w>+', { desc = 'Grow window vertically' })
-vim.keymap.set('n', '<leader>wj', '<C-w>-', { desc = 'Shrink window vertically' })
+vim.keymap.set('n', '<leader>rw', function()
+  require('custom-plugins.resize-mode').enter()
+end, { desc = 'Enter window resize mode' })
