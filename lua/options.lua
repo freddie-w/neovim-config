@@ -12,6 +12,9 @@ vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
 
+vim.o.timeout = true
+vim.o.timeoutlen = 1000
+
 -- Enable break indent
 vim.o.breakindent = true
 

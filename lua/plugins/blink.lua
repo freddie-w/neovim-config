@@ -42,7 +42,7 @@ return {
       --    This will expand snippets if the LSP sent a snippet.
       -- 'super-tab' for tab to accept
       -- 'enter' for enter to accept
-      -- 'none' for no mappings
+      -- 'none' for no mapping
       --
       -- For an understanding of why the 'default' preset is recommended,
       -- you will need to read `:help ins-completion`
@@ -57,7 +57,7 @@ return {
       -- <c-k>: Toggle signature help
       --
       -- See :h blink-cmp-config-keymap for defining your own keymap
-      preset = 'default',
+      preset = 'enter',
 
       -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
       --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
