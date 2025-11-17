@@ -45,6 +45,7 @@ vim.keymap.set('n', '<leader>mwj', '<C-w>J', { desc = 'Move window down' })
 vim.keymap.set('n', '<leader>mwk', '<C-w>K', { desc = 'Move window up' })
 vim.keymap.set('n', '<leader>mwl', '<C-w>L', { desc = 'Move window right' })
 
+-- Enter resize mode
 vim.keymap.set('n', '<leader>rw', function()
   require('custom-plugins.resize-mode').enter()
 end, { desc = 'Enter window resize mode' })

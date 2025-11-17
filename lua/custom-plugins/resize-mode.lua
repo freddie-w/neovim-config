@@ -1,6 +1,6 @@
 local M = {}
 
--- Enter "resize mode"
+-- Enter resize mode
 function M.enter()
   local opts = { noremap = true, silent = true }
 
@@ -11,14 +11,14 @@ function M.enter()
   vim.api.nvim_buf_set_keymap(0, 'n', '=', '<C-w>=2', opts) -- equal windows
 
   -- Exit resize mode with Esc, Enter
-  -- TODO also handle tab somehow
+  -- TODO also handle tab somehow?
   vim.api.nvim_buf_set_keymap(0, 'n', '<Esc>', '<Cmd>lua require("custom-plugins.resize-mode").exit()<CR>', opts)
   vim.api.nvim_buf_set_keymap(0, 'n', '<CR>', '<Cmd>lua require("custom-plugins.resize-mode").exit()<CR>', opts)
 
   vim.notify 'Window Resize Mode: h/l/k/j/= to resize, Esc or Enter to exit'
 end
 
--- Exit "resize mode"
+-- Exit resize mode
 function M.exit()
   local keys = { 'h', 'l', 'k', 'j', '<Esc>' }
   for _, key in ipairs(keys) do
